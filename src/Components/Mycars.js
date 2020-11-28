@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Car from './Cars';
 
 class Mycars extends Component{
     render(){
         return (
             <div>
-                <h1>My cars</h1>
+                <h3>Catalogue de voiture</h3>
+                <Car/>
             </div>
         )
     }
