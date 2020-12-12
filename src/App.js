@@ -4,10 +4,14 @@ import './App.css';
 
 class App extends Component{
 
+  state = {
+    titre:'Mon catalogue voiture'
+  }
+
   render(){
     return (
       <div className="App">
-        <Mycars/>
+        <Mycars title={this.state.titre}> </Mycars>
       </div>
     );
   }
