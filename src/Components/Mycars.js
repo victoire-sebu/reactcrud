@@ -3,12 +3,17 @@ import Car from './Cars';
 
 class Mycars extends Component{
 
-    noCopy=()=>{
+    noCopy = () => {
         alert('Mercie de ne pas copier ceci');
     }
 
-    addstyle=(e)=>{
-        console.log(e);
+    addstyle = (e) => {
+        console.log(e.target);
+        if (e.target.classList.contains('styled')) {
+            e.target.classList.remove('styled');
+        } else {
+            e.target.classList.add('styled');
+        }
     }
     
     render(){
@@ -16,7 +21,7 @@ class Mycars extends Component{
         return (
             <div className="container">
               
-                    <h3 className="mt-4" onMouseOver={this.adstyle}>{this.props.title}</h3> {/* reaction lors du passage de la sourie */}
+                    <h3 className="mt-4" onMouseOver={this.addstyle}>{this.props.title}</h3> {/* reaction lors du passage de la sourie */}
                     <p onCopy={this.noCopy}>Réaliser une copie moderne</p>  {/* reaction pour une copie */}
                     <Car color="green">ford</Car>
                     <Car >Toyota</Car>
