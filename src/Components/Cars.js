@@ -2,24 +2,29 @@ import React from 'react'
 
 const Car = (props) => {
     //pour l'élement color
-    const colorInfo=props.color ? (<div className="d-inline p-2  ml-3">Couleur: {props.color}</div>):(<div className="d-inline p-2  ml-3">Couleur: Null</div>);
+    const colorInfo=props.color ? (`${props.color}`):('Null');
     
     //pour tester l'élement  marque
-    if (props.children) {
+    if (props.name) {
         return(
-            <div className="mt-5 bg-primary">
-                <div className="d-inline p-2 ">Marque: {props.children}</div>
-                {colorInfo}
+            <tr>
+                <td><p>{props.name}</p></td>
+                <td><p>{props.year}</p></td>
+                <td>{colorInfo}</td>
+            </tr>
+            
+                
                
-            </div>
+          
         )
     } else {
         return(
-            <div className="mt-5 bg-primary">
-                <div className="d-inline p-2 ">Pas de données</div>
+            null
+            // <div className="mt-5 bg-primary">
+            //     <div className="d-inline p-2 ">Pas de données</div>
                 
                
-            </div>
+            // </div>
         )
     }
 
